@@ -247,11 +247,13 @@
         
         /* Media Queries para Responsividade */
         @media (max-width: 768px) {
-            header {
-                height: 250px; /* Altura reduzida para telas menores */
-                padding: 10px;
-                background-position: top;
-            }
+    header {
+        height: 250px; /* Altura reduzida para telas menores */
+        padding: 10px;
+        background-position: top;
+        background-size: cover; /* Certifica-se de que a imagem de capa ainda cubra a área */
+        width: 100%; /* Adiciona esta linha para garantir que a largura do header se ajuste à tela */
+    }
             nav a {
                 margin: 5px;
                 font-size: 16px; /* Reduzir o tamanho da fonte para dispositivos menores */
@@ -264,11 +266,13 @@
         }
 
         @media (max-width: 480px) {
-            header {
-                height: 200px; /* Altura reduzida para telas menores */
-                padding: 5px;
-                background-position: top;
-            }
+    header {
+        height: 200px; /* Altura reduzida para telas menores */
+        padding: 5px;
+        background-position: top;
+        background-size: cover; /* Certifica-se de que a imagem de capa ainda cubra a área */
+        width: 100%; /* Adiciona esta linha para garantir que a largura do header se ajuste à tela */
+    }
             nav a {
                 margin: 3px;
                 font-size: 14px; /* Reduzir o tamanho da fonte para dispositivos menores */
@@ -279,93 +283,6 @@
                 padding: 5px;
             }
         }
-    </style>
-    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-    <script>
-        (function() {
-            emailjs.init("PqNcsGSNK8X72cDwI");
-        })();
-
-        function sendEmail(event) {
-            event.preventDefault();
-            emailjs.sendForm('service_66gy7hh', 'template_wi2cvs3', event.target)
-                .then(function() {
-                    alert('Em breve retornaremos o contato. Obrigado!');
-                    document.getElementById('contato-form').reset();
-                }, function(error) {
-                    alert('Ocorreu um erro: ' + JSON.stringify(error));
-                });
-        }
-    </script>
-</head>
-<body>
-    <header>
-        <h1>Bem-vindo ao Melhor Serviço de TV Online</h1>
-        <nav>
-            <a href="#quem-somos">Quem Somos</a>
-            <a href="#portfolio">Portfólio</a>
-            <a href="#teste-gratis">Faça um Teste Grátis</a>
-            <a href="#revendedor">Seja nosso Revendedor</a>
-            <a href="#contato">Contato</a>
-        </nav>
-    </header>
-
-    <section id="quem-somos">
-        <h2>Quem Somos</h2>
-        <p>Na MasterBlessTv, estamos empenhados em oferecer uma experiência excepcional de entretenimento digital. Desde o nosso início, buscamos redefinir os padrões do entretenimento online, proporcionando uma experiência envolvente e de qualidade para todos os nossos espectadores.</p>
-        <p>Nossa equipe é composta por indivíduos apaixonados e dedicados, comprometidos em oferecer conteúdo inovador e emocionante para pessoas de todas as idades e interesses. Acreditamos que o entretenimento tem o poder de inspirar, educar e unir pessoas de todo o mundo.</p>
-        <p>Na Master Bless Tv, estamos constantemente explorando novas maneiras de encantar nossos espectadores, oferecendo uma variedade de conteúdos que vão desde séries e filmes emocionantes até programas educacionais e documentários cativantes.</p>
-        <p>Estamos comprometidos em construir uma comunidade vibrante de fãs e apoiadores que compartilham nossa paixão pelo entretenimento de qualidade. Junte-se a nós nesta jornada enquanto continuamos a criar momentos memoráveis e experiências inesquecíveis para todos os nossos espectadores.</p>
-        <p>Bem-vindo à Master Bless Tv, onde a magia do entretenimento ganha vida.</p>
-    </section>
-    
-    <section id="portfolio">
-        <h2>MasterBlessTV Online</h2>
-        <div class="portfolio-item">
-            <img src="assistaondequiser.jpg" alt="Exemplo de Serviço 1">
-            <h2>Assista onde quiser!</h2>
-            <p>Mais de 1000 canais, filmes e séries para você assistir com sua família.</p>
-            <p>Faça um teste gratuito agora!</p>
-        </div>
-    </section>
-
-    <section id="teste-gratis">
-        <h2>Faça um Teste Grátis</h2>
-        <p>Experimente nosso serviço de TV Online gratuitamente por um período limitado. Clique no botão abaixo para se cadastrar.</p>
-        <a class="cta-button" href="https://koffice.serveript.com/t/MTQ2NA==">Teste Grátis</a>
-    </section>
-
-    <section id="revendedor">
-        <h2>Seja nosso Revendedor</h2>
-        <p>Junte-se a nós e comece a ganhar com a venda de nossos serviços de TV Online. Clique no botão abaixo e fale com um de nossos gerentes.</p>
-        <a class="cta-button" href="https://api.whatsapp.com/send/?phone=%2B5521989570019&text&type=phone_number&app_absent=0">Whatsapp</a>
-    </section>
-
-
-    <section id="contato">
-        <h2>Contato</h2>
-        <p>Para mais informações sobre o serviço, entre em contato conosco através do formulário abaixo:</p>
-        <form id="contato-form" onsubmit="sendEmail(event)">
-            <label for="nome">Nome:</label><br>
-            <input type="text" id="nome" name="nome" required><br><br>
-            <label for="email">Email:</label><br>
-            <input type="email" id="email" name="email" required><br><br>
-            <label for="telefone">Telefone:</label><br>
-            <input type="tel" id="telefone" name="telefone" required><br><br>
-            <label for="mensagem">Mensagem:</label><br>
-            <textarea id="mensagem" name="mensagem" rows="4" required></textarea><br><br>
-            <input type="submit" value="Enviar">
-        </form>
-    </section>
-
-    <div class="spacer"></div>
-
-    <footer>
-        <p>&copy; 2024 MasterBlessTv. Todos os direitos reservados.</p>
-        <p>Instagram: @masterblesstv</p>
-    </footer>
-</body>
-</html>
     </style>
     <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <script>
